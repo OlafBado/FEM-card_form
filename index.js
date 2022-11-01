@@ -95,6 +95,8 @@ form.addEventListener('submit', (e) => {
     
     if (!cardNumberValue) {
         setErrorFor(cardNumber, "Can't be blank")
+    } else if (checkForLetters(cardNumberValue)) {
+        setErrorFor(cardNumber, "Wrong format")
     } else if (cardNumberValue.replace(/ /g, '').length < 16) {
         setErrorFor(cardNumber, "Number too short")
     } else {
@@ -107,7 +109,7 @@ form.addEventListener('submit', (e) => {
     } else if (monthValue > 12) {
         monthErrors = 1
         setErrorFor(month, "Incorrect month")
-    } else if (checkFotLetters(monthValue)) {
+    } else if (checkForLetters(monthValue)) {
         monthErrors = 1
         setErrorFor(month, "Wrong format")
     } else {
@@ -121,7 +123,7 @@ form.addEventListener('submit', (e) => {
     } else if (yearValue < 22) {
         yearErrors = 1
         setErrorFor(year, "Card has expired")
-    } else if (checkFotLetters(yearValue)) {
+    } else if (checkForLetters(yearValue)) {
         yearErrors = 1
         setErrorFor(year, "Wrong format")
     } else {
@@ -136,7 +138,7 @@ form.addEventListener('submit', (e) => {
 
     if (!cvcValue) {
         setErrorFor(cvc, "Can't be blank")
-    } else if (checkFotLetters(cvcValue)) {
+    } else if (checkForLetters(cvcValue)) {
         setErrorFor(cvc, "Wrong format")
 
     } else {
@@ -173,7 +175,7 @@ setBoxes(yearBox, '00', e))
 cvc.addEventListener('input', e => 
 setBoxes(cvcBox, '000', e))
 
-const checkFotLetters = (str) => {
+const checkForLetters = (str) => {
     return isNaN(str)
 }
 
