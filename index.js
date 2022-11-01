@@ -178,5 +178,3 @@ setBoxes(cvcBox, '000', e))
 const checkForLetters = (str) => {
     return isNaN(str)
 }
-
-
