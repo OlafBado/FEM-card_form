@@ -39,7 +39,7 @@ const clearBoxes = (box) => {
 }
 
 cardNumber.addEventListener('input', (e) => {
-    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    e.target.value = e.target.value.replace(/[^\d0-9]/g, '').replace(/(.{4})/g, '$1 ').trim();
 })
 
 continueButton.addEventListener('click', () => {
@@ -107,6 +107,9 @@ form.addEventListener('submit', (e) => {
     } else if (monthValue > 12) {
         monthErrors = 1
         setErrorFor(month, "Incorrect month")
+    } else if (checkFotLetters(monthValue)) {
+        monthErrors = 1
+        setErrorFor(month, "Wrong format")
     } else {
         monthErrors = 0
         month.classList.remove('invalid__input')
@@ -118,6 +121,9 @@ form.addEventListener('submit', (e) => {
     } else if (yearValue < 22) {
         yearErrors = 1
         setErrorFor(year, "Card has expired")
+    } else if (checkFotLetters(yearValue)) {
+        yearErrors = 1
+        setErrorFor(year, "Wrong format")
     } else {
         yearErrors = 0
         year.classList.remove('invalid__input')
@@ -130,6 +136,9 @@ form.addEventListener('submit', (e) => {
 
     if (!cvcValue) {
         setErrorFor(cvc, "Can't be blank")
+    } else if (checkFotLetters(cvcValue)) {
+        setErrorFor(cvc, "Wrong format")
+
     } else {
         setSuccessFor(cvc)
     }
@@ -163,4 +172,9 @@ setBoxes(yearBox, '00', e))
 
 cvc.addEventListener('input', e => 
 setBoxes(cvcBox, '000', e))
+
+const checkFotLetters = (str) => {
+    return isNaN(str)
+}
+
 

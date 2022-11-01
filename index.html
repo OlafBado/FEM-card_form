@@ -33,7 +33,7 @@
       <label for="name">
         CARDHOLDER NAME
       </label>
-      <input minlength="2" maxlength="50" placeholder="e.g. Jane Appleseed" type="text" id="name" name="name">
+      <input minlength="2" maxlength="25" placeholder="e.g. Jane Appleseed" type="text" id="name" name="name">
       <div class="error__message error__message__name">Can't be blank</div>
       <label for="card_number">
         CARD NUMBER
@@ -44,8 +44,8 @@
         <fieldset class="fieldset__date">
           <label for="date" class="fieldset__date__label">EXP. DATE (MM/YY)</label>
           <div class="fieldset__date__wrapper">
-            <input minlength="2" maxlength="2" placeholder="MM" type="text" pattern="\d*" id="month" name="date">
-            <input minlength="2" maxlength="2" placeholder="YY" type="text" pattern="\d*" id="year" name="date">
+            <input minlength="2" maxlength="2" placeholder="MM" type="text" id="month" name="date">
+            <input minlength="2" maxlength="2" placeholder="YY" type="text" id="year" name="date">
           </div>
           <div class="error__message error__message__date">Can't be blank</div>
         </fieldset>
