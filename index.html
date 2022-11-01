@@ -10,19 +10,36 @@
 <body>
   <img class="bg" src="./images/bg-main-mobile.png" alt="background img">
   <div class="container">
-      <img class="card card--back" src="./images/bg-card-back.png" alt="">
-      <img class="card card--front" src="./images//bg-card-front.png" alt="">
+      <!-- <img class="card card--back" src="./images/bg-card-back.png" alt="">
+      <img class="card card--front" src="./images//bg-card-front.png" alt=""> -->
+      <div class="card__wrapper card__wrapper--back">
+        <img class="card__img card__img--back" src="./images/bg-card-back.png" alt="card back image">
+        <p class="card__box__cvc">000</p>
+      </div>
+      <div class="card__wrapper card__wrapper--front">
+        <img class="card__img" src="./images/bg-card-front.png" alt="card front image">
+        <div class="card__content__wrapper">
+          <div class="card__content__section card__content__section--upper">
+            <img class="card__content__section__logo" src="./images/card-logo.svg" alt="">
+          </div>
+          <div class="card__content__section card__content__section--lower">
+            <p class="card__box__card-number">0000 0000 0000 0000</p>
+            <p class="card__box__name">JANE APPLESEED</p>
+            <p class="card__box__date"><span class="card__box__date--month">00</span>/<span class="card__box__date--year">00</span></p>
+          </div>
+        </div>
+      </div>
     <form action="#" class="form">
-      <label for="cardholder-name">
+      <label for="name">
         CARDHOLDER NAME
       </label>
-      <input minlength="2" maxlength="50" placeholder="e.g. Jane Appleseed" type="text" id="cardholder-name" name="cardholder-name">
+      <input minlength="2" maxlength="50" placeholder="e.g. Jane Appleseed" type="text" id="name" name="name">
       <div class="error__message error__message__name">Can't be blank</div>
       <label for="card_number">
         CARD NUMBER
       </label>
       <input minlength="19" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" type="text" id="card_number" name="card_number">
-      <div class="error__message error__message__card">Can't be blank</div>
+      <div class="error__message error__message__card_number">Can't be blank</div>
       <div class="fieldset__wrapper">
         <fieldset class="fieldset__date">
           <label for="date" class="fieldset__date__label">EXP. DATE (MM/YY)</label>
@@ -34,12 +51,18 @@
         </fieldset>
         <fieldset class="fieldset__cvc">
           <label for="cvc">CVC</label>
-          <input minlength="3" maxlength="3" placeholder="e.g. 123" type="text" id="cvc">
+          <input minlength="3" maxlength="3" placeholder="e.g. 123" type="text" id="cvc" name="cvc">
           <div class="error__message error__message__cvc">Can't be blank</div>
         </fieldset>
       </div>
-      <input type="submit" value="Confirm" class="submit">
+      <input type="submit" value="Confirm" class="button button--submit">
     </form>
+    <section class="section">
+      <img src="./images/icon-complete.svg" alt="image completed submition">
+      <h1>Thank you!</h1>
+      <p>We've added your card details</p>
+      <button class="button button--continue">Continue</button>
+    </section>
   </div>
 </body>
 </html>
