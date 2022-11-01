@@ -14,6 +14,7 @@ const yearBox = document.querySelector('.card__box__date--year')
 const cvcBox = document.querySelector('.card__box__cvc')
 const inputs = [cardNumber, name, month, year, cvc]
 const boxes = [cardNumberBox, nameBox, monthBox, yearBox, cvcBox]
+const regex = /[ !"#$%&()*+,-./:;<=>?@[\\\]^_`{|}~']/
 section.remove()
 
 const clearInputs = () => {
@@ -89,6 +90,8 @@ form.addEventListener('submit', (e) => {
         setErrorFor(name, "Can't be blank")
     } else if (nameValue.length < 2) {
         setErrorFor(name, "Name too short")
+    } else if (regex.test(nameValue)) {
+        setErrorFor(name, "Wrong format")
     } else {
         setSuccessFor(name)
     }
